@@ -7,8 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         View view = new View();
+        String numbersString;
 
-        String numbersString = view.readNumbersToString();
+        if (args[0]!=null) {
+            numbersString = view.readNumbersToString(args[0]);
+        } else {
+            numbersString = view.readNumbersToString();
+        }
 
         if(numbersString != null && !numbersString.isEmpty()){
             Model model = new Model(numbersString);
