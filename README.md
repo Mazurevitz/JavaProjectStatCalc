@@ -1,4 +1,4 @@
-# JavaProjectStatCalc
+# Statistic Calculator Java MVC
 
 Project for introduction to programming in Java for University
 
