@@ -56,7 +56,12 @@ public class Model {
                 .mapToInt(Integer::parseInt)
                 .toArray();
          average = calcAverage(this.inputList);
-         median = calcMedian(this.inputList);
+         try {
+             median = calcMedian(this.inputList);
+         }
+         catch (Exception e){
+             System.err.println("Error: " + e + " couldn't divide length of array, probably wrong input,");
+         }
          stdDev = calcStdDev(this.inputList);
          variance = calcVariance(this.inputList);
     }
@@ -82,8 +87,8 @@ public class Model {
     private double calcMedian(int[] numArray) {
         Arrays.sort(numArray);
         if (numArray.length % 2 == 0) // check if length is odd or even
-            return ((double)numArray[numArray.length/2] +
-                    (double)numArray[numArray.length/2 - 1]);
+             return ((double) numArray[numArray.length / 2] +
+                   (double) numArray[numArray.length / 2 - 1]);
         else
             return (double)numArray[numArray.length/2];
     }
