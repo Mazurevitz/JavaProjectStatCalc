@@ -60,7 +60,8 @@ public class Model {
              median = calcMedian(this.inputList);
          }
          catch (Exception e){
-             System.err.println("Error: " + e + " couldn't divide length of array, probably wrong input,");
+             System.err.println("Couldn't divide length of array, probably wrong input given by user");
+             throw e;
          }
          stdDev = calcStdDev(this.inputList);
          variance = calcVariance(this.inputList);
